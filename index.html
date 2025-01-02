@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Peta Google</title>
+    <style>
+        /* Set ukuran elemen div yang berisi peta */
+        #map {
+            height: 400px; /* Tinggi 400 piksel */
+            width: 100%; /* Lebar 100% dari halaman web */
+        }
+
+        /* Mengatur tampilan halaman */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Demo Peta Google Saya</h3>
+    <!-- Elemen div untuk peta -->
+    <div id="map"></div>
+
+    <!-- Menyertakan skrip Google Maps -->
+    <script>
+        // Fungsi untuk inisialisasi peta
+        function initMap() {
+            // Lokasi Jakarta
+            const position = { lat: -6.2088, lng: 106.8456 };
+
+            // Membuat peta dengan opsi yang sesuai
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10, // Zoom level
+                center: position, // Pusat peta di Jakarta
+            });
+
+            // Menambahkan marker di Jakarta
+            const marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: "Jakarta"
+            });
+        }
+    </script>
+
+    <!-- Memuat Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyB8a7T959Y7afmFBC7ONTPVI4aDnepqmSg&callback=initMap" async defer></script>
+</body>
+</html>
